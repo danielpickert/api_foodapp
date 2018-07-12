@@ -22,9 +22,23 @@ app.get("/search/:title", (req, res) => {
 			}`
 		)
 		.then(reply => {
+			console.log(req.params.title)
 			res.json(reply.data.recipes);
 		});
 });
+
+app.post("/search/:title", (req, res) => {
+	axios.post(
+			`http://food2fork.com/api/search?key=${FOOD_KEY}&q=${
+				req.params.title
+			}`
+		)
+		.then(reply => {
+			res.json(reply.data.recipes);
+		});
+});
+
+
 
 app.listen(3001, () => console.log("Server's running on 3001!"));
 // app.set('port', process.env.PORT || 3001)
