@@ -5,22 +5,26 @@ const session = require("express-session");
 // const mongoose = require("./db/models");
 // const variable = mongoose.model("");
 const cors = require("cors");
-const axios = require('axios');
+const axios = require("axios");
 
 app.use(cors());
 
 // app.use(express.static('public'));
 
-app.get("/", (req, res) => res.send("What up WORLD!"));
+app.get("/", (req, res) => res.send("What up world!"));
 
-
-const FOOD_KEY = 'e932a4dbf99f934fb4163d7391dc9865';
+// API KEY for Food Recipes
+const FOOD_KEY = "e932a4dbf99f934fb4163d7391dc9865";
 app.get("/search/:title", (req, res) => {
-	 axios.get(`http://food2fork.com/api/search?key=${FOOD_KEY}&q=${req.params.title}`)
-    .then(reply => {
-    res.json(reply.data.recipes)
-    })
-})
+	axios.get(
+			`http://food2fork.com/api/search?key=${FOOD_KEY}&q=${
+				req.params.title
+			}`
+		)
+		.then(reply => {
+			res.json(reply.data.recipes);
+		});
+});
 
 app.listen(3001, () => console.log("Server's running on 3001!"));
 // app.set('port', process.env.PORT || 3001)
