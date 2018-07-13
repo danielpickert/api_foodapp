@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const session = require("express-session");
-// const mongoose = require("./db/models");
+const mongoose = require("./db/models");
 // const variable = mongoose.model("");
 const cors = require("cors");
 const axios = require("axios");
@@ -37,8 +37,6 @@ app.post("/search/:title", (req, res) => {
 			res.json(reply.data.recipes);
 		});
 });
-
-
 
 app.listen(3001, () => console.log("Server's running on 3001!"));
 // app.set('port', process.env.PORT || 3001)
