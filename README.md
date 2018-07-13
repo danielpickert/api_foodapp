@@ -1,7 +1,7 @@
 
 # Project #3 Recipe Hub
 
-This is the back end of the recipe Hub App, Which allows users to login into their user profiles favorite recipes and delete favorited recipes
+This is the back end of the Recipe Hub App, Which allows users to login into their user profiles favorite recipes and delete favorited recipes
 
 This app allows users to Create a search for recipes by inputting the name of the dish or an ingredient in the recipe. The app Reads the request and Renders photos and links to various food items. If you click on the photo the page will redirect to another component which contains the web address of the recipe you clicked on. If you click on the icon on the go home button you can Update the search field to produce a new search.
 
